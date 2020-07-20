@@ -1,7 +1,23 @@
-$.getJSON( "json/head.json", function( data ) {
+$( document ).ready(function() {
 
-	$.each( data, function( key, val ) {
-		console.log(key + ' ' + val)
-	});
-
+    loadJson("head")
+    
 });
+
+
+
+function loadJson(file) {
+	$.getJSON( "json/"+file+".json", function( data ) {
+
+		$.each( data, function( key, val ) {
+
+			console.log(key)
+
+			$.each (val, function(attr, value) {
+				console.log(attr + ' ' + value)
+			})
+			
+		});
+
+	});
+}
