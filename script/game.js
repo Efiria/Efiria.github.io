@@ -13,7 +13,7 @@ function startGame() {
     } else {
         document.getElementById("total").innerHTML = total;
     }    
-    
+
     //save every 5 min
     window.setInterval(function(){
         save()
@@ -26,10 +26,10 @@ function updateTotal(newTotal) {
 
 function count(value) {
     total = total + value
-    window.setInterval(function(){
-        total += value;
-        updateTotal(total)
-    }, 1000);
+    // window.setInterval(function(){
+    //     total += value;
+    //     updateTotal(total)
+    // }, 1000);
     updateTotal(total)
 }
 
@@ -47,6 +47,7 @@ function deleteSave() {
     total = 0
     updateTotal(total)
     document.cookie = saveName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    $('#saveModal').modal('hide');
 }
 
 function getCookie(cname) {
