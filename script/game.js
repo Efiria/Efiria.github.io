@@ -33,6 +33,8 @@ function save() {
 }
 
 function deleteSave() {
+    total = 0
+    updateTotal(total)
     document.cookie = saveName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }
 
